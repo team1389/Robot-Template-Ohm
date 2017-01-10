@@ -5,7 +5,7 @@ import org.usfirst.frc.team1389.autonomous.AutonOption;
 
 import com.team1389.auto.AutoModeBase;
 
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import com.team1389.util.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DashboardInput {
