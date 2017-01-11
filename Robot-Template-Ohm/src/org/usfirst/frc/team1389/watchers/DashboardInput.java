@@ -22,7 +22,7 @@ public class DashboardInput {
 	private SendableChooser<AutonOption> autonSelector;
 
 	public void init() {
-		autonSelector = new SendableChooser<AutonOption>();
+		autonSelector = new SendableChooser<AutonOption>(AutonOption.DRIVE_STRAIGHT);
 		for (AutonOption autonOption : AutonOption.values()) {
 			autonSelector.addObject(autonOption.name, autonOption);
 		}
