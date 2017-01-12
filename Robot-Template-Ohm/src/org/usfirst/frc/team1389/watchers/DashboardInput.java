@@ -5,7 +5,7 @@ import org.usfirst.frc.team1389.autonomous.AutonOption;
 
 import com.team1389.auto.AutoModeBase;
 
-import com.team1389.util.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DashboardInput {
@@ -22,7 +22,7 @@ public class DashboardInput {
 	private SendableChooser<AutonOption> autonSelector;
 
 	public void init() {
-		autonSelector = new SendableChooser<AutonOption>(AutonOption.DRIVE_STRAIGHT);
+		autonSelector = new SendableChooser<AutonOption>();
 		for (AutonOption autonOption : AutonOption.values()) {
 			autonSelector.addObject(autonOption.name, autonOption);
 		}
