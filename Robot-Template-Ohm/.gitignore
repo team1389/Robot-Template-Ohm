@@ -1,6 +1,6 @@
 /bin/
 /build/
-/build/jars/**
+/build*
 /export/
 /dist/
 /bin/
