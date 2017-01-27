@@ -23,10 +23,4 @@ public class DebugDash extends Watcher {
 		publish(Watcher.DASHBOARD);
 	}
 
-	@Override
-	public void clearWatchers() {
-		// TODO doesnt do anything
-		super.clearWatchers();
-	}
-
 }
