@@ -1,13 +1,12 @@
 package org.usfirst.frc.team1389.robot;
 
 public class RobotConstants {
-	public static final double INCHES_TO_METERS = .0254;
-
-	public static final double WheelDiameter = 8; // in
+	public static final int MaxConcurrentThreads = 20;
 
 	/**
 	 * constants for odometry calculations
 	 */
+	public static final double WheelDiameter = 8; // in
 	public static final double TrackWidth = 22; // in
 	public static final double TrackLength = 23;
 	public static final double TrackScrub = 1;
