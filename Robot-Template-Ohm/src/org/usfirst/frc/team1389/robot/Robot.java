@@ -30,22 +30,22 @@ public class Robot extends IterativeRobot {
 		teleOperator = new TeleopMain(robot);
 		autoModeExecuter = new AutoModeExecuter();
 		DashboardInput.getInstance().init();
-		robot.threadService.init();
+		
 	}
 
 	@Override
 	public void autonomousInit() {
-		robot.threadService.init();
+	
 		autoModeExecuter.stop();
 		AutoModeBase selectedAutonMode = DashboardInput.getInstance().getSelectedAutonMode();
 		autoModeExecuter.setAutoMode(selectedAutonMode);
-		robot.threadService.borrowThreadToRun(autoModeExecuter);
+		
 	}
 
 	@Override
 	public void teleopInit() {
 		autoModeExecuter.stop();
-		robot.threadService.init();
+		
 		teleOperator.init();
 	}
 
@@ -59,6 +59,5 @@ public class Robot extends IterativeRobot {
 	
 	@Override
 	public void disabledInit() {
-		robot.threadService.init();
 	}
 }
