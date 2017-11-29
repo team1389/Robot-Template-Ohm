@@ -7,9 +7,12 @@ import com.team1389.hardware.outputs.hardware.CANTalonGroup;
 import com.team1389.hardware.outputs.hardware.CANTalonHardware;
 import com.team1389.hardware.outputs.hardware.VictorHardware;
 import com.team1389.hardware.registry.Registry;
+import com.team1389.hardware.registry.port_types.CAN;
+import com.team1389.hardware.registry.port_types.PWM;
 
 /**
- * responsible for initializing and storing hardware objects defined in {@link RobotLayout}
+ * responsible for initializing and storing hardware objects defined in
+ * {@link RobotLayout}
  * 
  * @author amind
  * @see RobotLayout
@@ -19,8 +22,8 @@ public class RobotHardware extends RobotLayout {
 
 	/**
 	 * Initializes robot hardware by subsystem. <br>
-	 * note: use this method as an index to show hardware initializations that occur, and to find
-	 * the init code for a particular system's hardware
+	 * note: use this method as an index to show hardware initializations that
+	 * occur, and to find the init code for a particular system's hardware
 	 */
 	protected RobotHardware() {
 		registry = new Registry();
@@ -28,6 +31,7 @@ public class RobotHardware extends RobotLayout {
 		System.out.println("initializing hardware");
 		gyro = new GyroHardware<>(GyroHardware.ADXRS_450, spi_GYRO, registry);
 		initDriveTrain();
+		Arm();
 		initElevator();
 	}
 
@@ -48,6 +52,12 @@ public class RobotHardware extends RobotLayout {
 		rightB = new CANTalonHardware(inv_RIGHT_MOTOR_B, can_RIGHT_MOTOR_B, registry);
 		leftGroup = new CANTalonGroup(leftA, leftB);
 		rightGroup = new CANTalonGroup(rightA, rightB);
+	}
+
+	private void Arm() {
+
+		victorIntake = new VictorHardware( inv_ARM_INTAKE, new PWM(8), registry);
+		victorMotion = new CANTalonHardware( inv_ARM_MOTION, new CAN(15), registry);
 	}
 
 	public Registry getRegistry() {

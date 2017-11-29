@@ -2,10 +2,17 @@
 package org.usfirst.frc.team1389.robot;
 
 import org.usfirst.frc.team1389.operation.TeleopMain;
+
 import org.usfirst.frc.team1389.watchers.DashboardInput;
 
 import com.team1389.auto.AutoModeBase;
 import com.team1389.auto.AutoModeExecuter;
+import com.team1389.hardware.inputs.controllers.XBoxController;
+import com.team1389.hardware.outputs.hardware.CANTalonHardware;
+import com.team1389.hardware.outputs.hardware.VictorHardware;
+import com.team1389.hardware.outputs.software.PercentOut;
+import com.team1389.hardware.registry.Registry;
+import com.team1389.hardware.registry.port_types.PWM;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 
@@ -15,11 +22,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * or the package after creating this project, you must also update the manifest file in the
  * resource directory.
  */
+@SuppressWarnings("unused")
 public class Robot extends IterativeRobot {
 	RobotSoftware robot;
 	TeleopMain teleOperator;
 	AutoModeExecuter autoModeExecuter;
-
+	
 	/**
 	 * This function is run when the robot is first started up and should be used for any
 	 * initialization code.
@@ -29,6 +37,7 @@ public class Robot extends IterativeRobot {
 		robot = RobotSoftware.getInstance();
 		teleOperator = new TeleopMain(robot);
 		autoModeExecuter = new AutoModeExecuter();
+		//XBoxController controller = new XBoxController(0);  <------ not needed
 		DashboardInput.getInstance().init();
 		
 	}
@@ -45,6 +54,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopInit() {
 		autoModeExecuter.stop();
+
+		
 		
 		teleOperator.init();
 	}
@@ -55,6 +66,9 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		teleOperator.periodic();
+		
+	
+		
 	}
 	
 	@Override
