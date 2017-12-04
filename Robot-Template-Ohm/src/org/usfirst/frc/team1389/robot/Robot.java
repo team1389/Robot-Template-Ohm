@@ -37,7 +37,6 @@ public class Robot extends IterativeRobot {
 		robot = RobotSoftware.getInstance();
 		teleOperator = new TeleopMain(robot);
 		autoModeExecuter = new AutoModeExecuter();
-		//XBoxController controller = new XBoxController(0);  <------ not needed
 		DashboardInput.getInstance().init();
 		
 	}

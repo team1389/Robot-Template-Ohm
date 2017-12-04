@@ -19,9 +19,9 @@ public class TeleopMain {
 	public void init() {
 		controls = ControlBoard.getInstance();
 		
-		GearArmSystem arm = new GearArmSystem(robot.armIntake, null, null, null, robot.armMotion);
+		GearArmSystem arm = new GearArmSystem(robot.armIntake, controls.inTakeAxis(), controls.outTakeAxis(), controls.angleAxis(), robot.armMotion);
 		arm.update();
-		manager = new SystemManager(/* Add your subsystems here */);
+		manager = new SystemManager(arm);
 		manager.init();
 
 	}
@@ -29,7 +29,7 @@ public class TeleopMain {
 	public void periodic() {
 		
 		robot.armIntake.set(controls.inTakeAxis().get());
-		robot.armOutTake.set(controls.outTakeAxis().get());
+		//robot.armOutTake.set(controls.outTakeAxis().get());
 		robot.armMotion.set(controls.angleAxis().get());
 		
 		manager.update();

@@ -16,15 +16,15 @@ public class GearArmSystem extends Subsystem {
 	public PercentOut armOutTake;
 	public PercentOut armMotion;
 
-	public PercentIn armintakeAxis;
+	public PercentIn armIntakeAxis;
 	public PercentIn armOutTakeAxis;
 	public PercentIn armAngleAxis;
 
 	public GearArmSystem(PercentOut armIntake, PercentIn armIntakeAxis,
-			PercentIn armOutTakeAxis, PercentIn armAngleAxis, PercentOut armMotion) {
+			PercentIn armOutTakeAxis,PercentIn armAngleAxis, PercentOut armMotion) {
 
 		this.armIntake = armIntake;
-		this.armintakeAxis = armIntakeAxis;
+		this.armIntakeAxis = armIntakeAxis;
 
 		this.armOutTakeAxis = armOutTakeAxis;
 
@@ -54,7 +54,9 @@ public class GearArmSystem extends Subsystem {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		while(true) {armMotion.set(1);}
+		armMotion.set(armAngleAxis.get());
+		armIntake.set(armIntakeAxis.get());
+		armOutTake.set(armIntakeAxis.get());
 	}
 
 }
