@@ -24,15 +24,15 @@ import edu.wpi.first.wpilibj.SPI;
  * <em>sinv_ASSOCIATED_IO_IDENTIFIER</em> for inputs.
  */
 public class RobotMap {
-	
+	/*
 	//Drivetrain
-	/*protected static final CAN can_LEFT_MOTOR_A = new CAN(9);
+	protected static final CAN can_LEFT_MOTOR_A = new CAN(3);
 	protected static final boolean inv_LEFT_MOTOR_A = true;
-	protected static final CAN can_LEFT_MOTOR_B = new CAN(5);
+	protected static final CAN can_LEFT_MOTOR_B = new CAN(6);
 	protected static final boolean inv_LEFT_MOTOR_B = false;
-	protected static final CAN can_RIGHT_MOTOR_A = new CAN(1);
+	protected static final CAN can_RIGHT_MOTOR_A = new CAN(5);
 	protected static final boolean inv_RIGHT_MOTOR_A = true;
-	protected static final CAN can_RIGHT_MOTOR_B = new CAN(7);
+	protected static final CAN can_RIGHT_MOTOR_B = new CAN(4);
 	protected static final boolean inv_RIGHT_MOTOR_B = true;
 	
 	//Elevator
@@ -50,8 +50,8 @@ public class RobotMap {
 	protected static final boolean sinv_LEFT_ENCODER = true;
 	protected static final boolean sinv_RIGHT_ENCODER = false;
 	protected static final boolean sinv_ELEVATOR_ENCODER = true;
-	protected static final SPIPort spi_GYRO = new SPIPort(SPI.Port.kOnboardCS0);*/
-	
+	protected static final SPIPort spi_GYRO = new SPIPort(SPI.Port.kOnboardCS0);
+	*/
 	//Arm
 	protected static final PWM pwm_ARM_INTAKE = new PWM (1);
 	protected static final boolean inv_ARM_INTAKE = true;

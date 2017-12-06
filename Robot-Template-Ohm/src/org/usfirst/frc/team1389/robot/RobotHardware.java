@@ -46,21 +46,30 @@ public class RobotHardware extends RobotLayout {
 	}
 
 	private void initDriveTrain() {
-	/*	leftA = new CANTalonHardware(inv_LEFT_MOTOR_A, sinv_LEFT_ENCODER, can_LEFT_MOTOR_A, registry);
-		rightA = new CANTalonHardware(inv_RIGHT_MOTOR_A, sinv_RIGHT_ENCODER, can_RIGHT_MOTOR_A, registry);
-		leftB = new CANTalonHardware(inv_LEFT_MOTOR_B, sinv_ELEVATOR_ENCODER, can_LEFT_MOTOR_B, registry);
-		rightB = new CANTalonHardware(inv_RIGHT_MOTOR_B, can_RIGHT_MOTOR_B, registry);
-		leftGroup = new CANTalonGroup(leftA, leftB);
-		rightGroup = new CANTalonGroup(rightA, rightB);
-		*/
+		//leftA = new CANTalonHardware(inv_LEFT_MOTOR_A, /*sinv_LEFT_ENCODER,*/ can_LEFT_MOTOR_A, registry);
+		//rightA = new CANTalonHardware(inv_RIGHT_MOTOR_A, /*sinv_RIGHT_ENCODER,*/ can_RIGHT_MOTOR_A, registry);
+		//leftB = new CANTalonHardware(inv_LEFT_MOTOR_B, /*sinv_ELEVATOR_ENCODER,*/ can_LEFT_MOTOR_B, registry);
+		//rightB = new CANTalonHardware(inv_RIGHT_MOTOR_B, can_RIGHT_MOTOR_B, registry);
+		//leftGroup = new CANTalonGroup(leftA, leftB);
+		//rightGroup = new CANTalonGroup(rightA, rightB);
+		
 	}
 
 	private void Arm() {
 
-		victorIntake = new VictorHardware( inv_ARM_INTAKE, new PWM(8), registry);
-		victorMotion = new CANTalonHardware( inv_ARM_MOTION, new CAN(15), registry);
+		victorIntake = new VictorHardware( inv_ARM_INTAKE, new PWM(1), registry);
+		victorMotion = new CANTalonHardware(true, inv_ARM_MOTION, new CAN(7), registry);
 	}
-
+	
+	public void Move() {
+		/*
+		talonleftfront = new CANTalonHardware(true, can_LEFT_MOTOR_A, new CAN(3), registery);
+		talonrightfront = new CANTalonHardware(false, can_RIGHT_MOTOR_A, new CAN(6), registery);
+		talonleftrear = new CANTalonHardware(true, can_LEFT_MOTOR_B, new CAN(5), registery);
+		talonrightrear = new CANTalonHardware(true, can_RIGHT_MOTOR_B, new CAN(4), registery);
+		*/
+	}
+	
 	public Registry getRegistry() {
 		return registry;
 	}

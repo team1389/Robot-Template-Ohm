@@ -111,6 +111,14 @@ public class ControlBoard
 	{
 		return manipController.backButton().latched();
 	}
+	// Added
+	public DigitalIn leftMove() {
+		return manipController.rightArrow().latched();
+	}
+	//Added
+	public DigitalIn rightMove() {
+		return manipController.leftArrow().latched();
+	}
 
 	public DigitalIn dumpHopperBtn()
 	{

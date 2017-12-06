@@ -1,5 +1,7 @@
 package org.usfirst.frc.team1389.operation;
 
+import java.util.Scanner;
+
 import org.usfirst.frc.team1389.robot.RobotSoftware;
 import org.usfirst.frc.team1389.robot.controls.ControlBoard;
 import org.usfirst.frc.team1389.systems.GearArmSystem;
@@ -20,6 +22,8 @@ public class TeleopMain {
 		controls = ControlBoard.getInstance();
 		
 		GearArmSystem arm = new GearArmSystem(robot.armIntake, controls.inTakeAxis(), controls.outTakeAxis(), controls.angleAxis(), robot.armMotion);
+		Scanner scan  = new Scanner(System.in);
+		String test = "asdas";
 		arm.update();
 		manager = new SystemManager(arm);
 		manager.init();
@@ -27,10 +31,6 @@ public class TeleopMain {
 	}
 
 	public void periodic() {
-		
-		robot.armIntake.set(controls.inTakeAxis().get());
-		//robot.armOutTake.set(controls.outTakeAxis().get());
-		robot.armMotion.set(controls.angleAxis().get());
 		
 		manager.update();
 	}
