@@ -1,7 +1,6 @@
 package com.team1389.robot;
 
 
-import com.team1389.operation.TeleopMain;
 import edu.wpi.first.wpilibj.TimedRobot;
 
 /**
@@ -12,8 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * directory.
  */
 public class Robot extends TimedRobot {
-	RobotSoftware robot;
-	TeleopMain teleOperator;
 	
 	/**
 	 * This function is run when the robot is first started up and should be used
@@ -22,8 +19,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 
-		robot = RobotSoftware.getInstance();
-		teleOperator = new TeleopMain(robot);
 	}
 
 	@Override
