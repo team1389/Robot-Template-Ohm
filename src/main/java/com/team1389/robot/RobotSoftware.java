@@ -7,6 +7,9 @@ public class RobotSoftware extends RobotHardware {
 		return INSTANCE;
 	}
 
+	public RobotSoftware(){
+		
+	}
 	
 
 }
