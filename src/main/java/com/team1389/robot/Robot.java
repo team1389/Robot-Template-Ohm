@@ -1,11 +1,8 @@
-package frc.robot;
+package com.team1389.robot;
 
-import com.team1389.auto.AutoModeBase;
-import com.team1389.auto.AutoModeExecuter;
-import com.team1389.hardware.registry.Registry;
-import frc.operation.TeleopMain;
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import com.team1389.operation.TeleopMain;
+import edu.wpi.first.wpilibj.TimedRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -14,12 +11,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot {
 	RobotSoftware robot;
 	TeleopMain teleOperator;
-
-	Registry registry;
-
+	
 	/**
 	 * This function is run when the robot is first started up and should be used
 	 * for any initialization code.
@@ -27,10 +22,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 
-		registry = new Registry();
 		robot = RobotSoftware.getInstance();
 		teleOperator = new TeleopMain(robot);
-
 	}
 
 	@Override
@@ -53,9 +46,6 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		// left side good
-		// right side is good
-		teleOperator.periodic();
 	}
 
 	@Override

@@ -1,10 +1,5 @@
-package frc.robot;
+package com.team1389.robot;
 
-import com.team1389.hardware.inputs.hardware.PDPHardware;
-import com.team1389.hardware.inputs.hardware.SwitchHardware;
-import com.team1389.hardware.outputs.hardware.CANTalonHardware;
-import com.team1389.hardware.outputs.hardware.ServoHardware;
-import com.team1389.hardware.outputs.hardware.VictorHardware;
 import com.team1389.hardware.registry.Registry;
 
 /**
@@ -27,14 +22,10 @@ public class RobotHardware extends RobotLayout
 	{
 		registry = new Registry();
 		System.out.println("initializing hardware");
-		pdp = new PDPHardware(can_PDP, registry);
 	
 	}
 
 
-	public Registry getRegistry()
-	{
-		return registry;
-	}
+
 
 }
