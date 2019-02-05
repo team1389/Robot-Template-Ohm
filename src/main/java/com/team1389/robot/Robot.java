@@ -47,7 +47,7 @@ public class Robot extends TimedRobot
 	@Override
 	public void teleopInit()
 	{
-
+		teleOperator.init();
 	}
 
 	/**
@@ -57,6 +57,7 @@ public class Robot extends TimedRobot
 	public void teleopPeriodic()
 	{
 		Watcher.update();
+		teleOperator.periodic();
 
 	}
 
